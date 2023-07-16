@@ -12,7 +12,7 @@
 
         <div class="margin-bottom:half">
             <label for="template_title" class="form-label form-label:bottom">
-                Title
+                标题
             </label>
 
             <input type="text" TABINDEX=1 class="form-input form-full" id="template_title" name="template_title"
@@ -100,7 +100,8 @@
                 value="{$auth_maxlife_steam}" />
 
             <div class="form-desc">
-                Max lifetime for auth tokens via steam login.
+                <!-- Max lifetime for auth tokens via steam login. -->
+                通过 steam 登录的验证令牌的最长有效时间
             </div>
         </div>
 
@@ -108,30 +109,34 @@
             <input type="checkbox" TABINDEX=6 name="config_debug" class="form-check" id="config_debug" />
 
             <label for="config_debug" class="form-label form-label:left">
-                Debugmode
+                <!-- Debugmode -->
+                调试模式
             </label>
 
             <div class="form-desc">
-                Check this box to enable the debugmode permanently.
+                <!-- Check this box to enable the debugmode permanently. -->
+                选中此框可永久启用调试模式
             </div>
         </div>
     </div>
 
     <div class="admin_tab_content_title">
-        <h2><i class="fas fa-home"></i> Dashboard Settings</h2>
+        <h2><i class="fas fa-home"></i> 概览页设置</h2>
     </div>
 
     <div class="padding">
         <div class="margin-bottom:half">
             <label for="dash_intro_title" class="form-label form-label:bottom">
                 Intro Title
+                介绍标题
             </label>
 
             <input type="text" TABINDEX=7 class="form-input form-full" id="dash_intro_title" name="dash_intro_title"
                 value="{$config_dash_title}" />
 
             <div class="form-desc">
-                Set the title for the dashboard introduction.
+                <!-- Set the title for the dashboard introduction. -->
+                设置概览页介绍的标题
             </div>
 
             <div id="dash.intro.msg" class="message message:error margin-top:half" style="display: none;"></div>
@@ -139,14 +144,16 @@
 
         <div class="margin-bottom:half">
             <label for="dash_intro_text" class="form-label form-label:bottom">
-                Intro Text
+                <!-- Intro Text -->
+                介绍文本
             </label>
 
             <textarea TABINDEX=6 cols="80" rows="20" class="form-text" id="dash_intro_text"
                 name="dash_intro_text">{$config_dash_text}</textarea>
 
             <div class="form-desc">
-                Set the text for the dashboard introduction.
+                <!-- Set the text for the dashboard introduction. -->
+                设置概览页介绍的文本
             </div>
         </div>
 
@@ -154,11 +161,13 @@
             <input type="checkbox" TABINDEX=8 name="dash_nopopup" class="form-check" id="dash_nopopup" />
 
             <label for="dash_nopopup" class="form-label form-label:left">
-                Disable Log Popup
+                <!-- Disable Log Popup -->
+                禁用日志弹出
             </label>
 
             <div class="form-desc">
-                Check this box to disable the log info popup and use direct link.
+                <!-- Check this box to disable the log info popup and use direct link. -->
+                选中此框可禁用日志信息弹出，并使用直接链接
             </div>
         </div>
     </div>
@@ -172,11 +181,12 @@
             <input type="checkbox" TABINDEX=9 name="enable_protest" class="form-check" id="enable_protest" />
 
             <label for="enable_protest" class="form-label form-label:left">
-                Enable Protest Ban
+                启用抗议封禁
             </label>
 
             <div class="form-desc">
-                Check this box to enable the protest ban page.
+                <!-- Check this box to enable the protest ban page. -->
+                选中此框以启用抗议封禁页面
             </div>
         </div>
 
@@ -184,11 +194,13 @@
             <input type="checkbox" TABINDEX=10 name="enable_submit" class="form-check" id="enable_submit" />
 
             <label for="enable_submit" class="form-label form-label:left">
-                Enable Submit Ban
+                <!-- Enable Submit Ban -->
+                启用申请封禁
             </label>
 
             <div class="form-desc">
-                Check this box to enable the submit ban page.
+                <!-- Check this box to enable the submit ban page. -->
+                选中此框以启用申请封禁玩家页面
             </div>
         </div>
 
@@ -196,11 +208,12 @@
             <input type="checkbox" TABINDEX=10 name="enable_commslist" class="form-check" id="enable_commslist" />
 
             <label for="enable_commslist" class="form-label form-label:left">
-                Enable Commslist
+                启用禁言名单
             </label>
 
             <div class="form-desc">
-                Check this box to enable the commslist page.
+                <!-- Check this box to enable the commslist page. -->
+                选中此框以启用禁言名单页面
             </div>
         </div>
 
@@ -220,15 +233,15 @@
 
         <div class="margin-bottom:half">
             <label for="default_page" class="form-label form-label:bottom">
-                Default Page
+                默认页面
             </label>
 
             <select class="form-select form-full" TABINDEX=11 name="default_page" id="default_page">
-                <option value="0">Dashboard</option>
-                <option value="1">Ban List</option>
-                <option value="2">Servers</option>
-                <option value="3">Submit a ban</option>
-                <option value="4">Protest a ban</option>
+                <option value="0">首页</option>
+                <option value="1">封禁名单</option>
+                <option value="2">服务器列表</option>
+                <option value="3">提交封禁</option>
+                <option value="4">解除封禁</option>
             </select>
 
             <div class="form-desc">
@@ -348,7 +361,7 @@
             </div>
         </div>
     </div>
-    
+
 	<div class="admin_tab_content_title">
         <h2><i class="fa-solid fa-paper-plane"></i></i> Mails Settings</h2>
     </div>
@@ -369,7 +382,7 @@
             <div class="form-desc">
                 Enter your Host.
             </div>
-			
+
 			<div id="mailhost.msg" class="message message:error margin-top:half" style="display: none;"></div>
         </div>
 
@@ -384,7 +397,7 @@
             <div class="form-desc">
                 Enter your UserName.
             </div>
-			
+
 			<div id="mail_user.msg" class="message message:error margin-top:half" style="display: none;"></div>
         </div>
 
@@ -402,7 +415,7 @@
 
             <div id="mail_pass.msg" class="message message:error margin-top:half" style="display: none;"></div>
         </div>
-		
+
 		<div class="margin-bottom:half">
             <label for="mail_port" class="form-label form-label:bottom">
                 Port
@@ -417,10 +430,10 @@
 
             <div id="mail_port.msg" class="message message:error margin-top:half" style="display: none;"></div>
         </div>
-		
+
 		<div class="margin-bottom:half">
 			<input type="checkbox" TABINDEX=20 name="mail_verify_peer" class="form-check" id="mail_verify_peer" />
-			
+
             <label for="mail_verify_peer" class="form-label form-label:bottom">
                 Verify SSL Certificate
             </label>

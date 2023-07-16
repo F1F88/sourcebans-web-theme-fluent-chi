@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<link rel="Shortcut Icon" href="../images/favicon.ico" />
 		<meta name="description" content="Sourcebans for website - Upload file" />
-		<title>Upload File : SourceBans</title>
+		<title>上传文件 : SourceBans</title>
 		<script type="text/javascript" src="../scripts/fontawesome-all.min.js"></script>
 	</head>
 
@@ -12,7 +12,7 @@
 			background-color: #0f1015;
 			background-repeat: repeat-x;
 			color: #efefef;
-			font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+			font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
 				Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 			font-size: 11px;
 			line-height: 135%;
@@ -20,9 +20,9 @@
 			padding: 0px;
    ">
 		<h3>{$title}</h3>
-		
-		<p>Plese select the file to upload.<br />
-		The file must either be {$formats} file format.<br />
+
+		<p>请选择要上传的文件<br />
+		上传的文件必须是 {$formats} 格式的文件.<br />
 		<b>{$message}</b></p>
 
 		<form action="" method="POST" id="{$form_name}" enctype="multipart/form-data">

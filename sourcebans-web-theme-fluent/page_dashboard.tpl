@@ -10,8 +10,8 @@
 
 <div class="layout_box margin-bottom">
   <div class="layout_box_title flex flex-jc:space-between flex-ai:center">
-    <h2><i class="fa-solid fa-face-angry"></i> Latest Added Bans</h2>
-    <span style="text-align: right;">Total bans: {$total_bans}</span>
+    <h2><i class="fa-solid fa-face-angry"></i> 最近封禁的玩家</h2>
+    <span style="text-align: right;">总封禁: {$total_bans}</span>
   </div>
 
   <div class="padding">
@@ -19,10 +19,10 @@
       <table>
         <thead>
           <tr>
-            <th style="width: 15%"><span class="responsive_show:desktop">MOD | </span>Type</th>
-            <th style="width: 28%" class="text:left">Date/Time</th>
-			<th style="width: 28%" class="text:left">Name</th>
-            <th style="width: 28%">Length</th>
+            <th style="width: 15%"><span class="responsive_show:desktop">游戏 | </span>封禁类型</th>
+            <th style="width: 28%" class="text:left">封禁日期</th>
+			<th style="width: 28%" class="text:left">玩家昵称</th>
+            <th style="width: 28%">封禁时长</th>
           </tr>
         </thead>
         <tbody>
@@ -36,7 +36,7 @@
               </td>
 			  <td>
                 {if empty($player.short_name)}
-                  <span class="text:italic">No nickname present</span>
+                  <span class="text:italic">没有昵称</span>
                 {else}
                   <span>{$player.short_name|escape:'html'}</span>
                 {/if}
@@ -56,8 +56,8 @@
 <div class="flex flex-ai:start flex-jc:space-bwtween m:flex-fd:column">
   <div class="layout_box flex:11 margin-right margin-bottom">
     <div class="layout_box_title flex flex-jc:space-between flex-ai:center">
-      <h2><i class="fa-solid fa-volume-xmark"></i> Latest Added Comms Block</h2>
-      <span style="text-align: right;">Total Blocks: {$total_comms}</span>
+      <h2><i class="fa-solid fa-volume-xmark"></i> 最近禁言的玩家 </h2>
+      <span style="text-align: right;">总禁言: {$total_comms}</span>
     </div>
 
     <div class="padding">
@@ -65,10 +65,10 @@
         <table>
           <thead>
             <tr>
-              <th><span class="responsive_show:desktop">MOD | </span>Type</th>
-			  <th class="text:left">Date/Time</th>
-              <th class="text:left">Name</th>
-              <th>Length</th>
+              <th><span class="responsive_show:desktop">游戏 | </span>封禁类型</th>
+			  <th class="text:left">封禁日期</th>
+              <th class="text:left">玩家昵称</th>
+              <th>封禁时长</th>
             </tr>
           </thead>
           <tbody>
@@ -82,7 +82,7 @@
                 </td>
 				<td>
                   {if empty($player.short_name)}
-                    <span class="text:italic">No nickname present</span>
+                    <span class="text:italic">没有昵称</span>
                   {else}
                     <span>{$player.short_name|escape:'html'}</span>
                   {/if}
@@ -101,8 +101,8 @@
 
   <div class="layout_box flex:11 margin-bottom">
     <div class="layout_box_title flex flex-jc:space-between flex-ai:center">
-      <h2><i class="fa-solid fa-hand"></i> Latest Players Blocked</h2>
-      <span style="text-align: right;">Total Stopped: {$total_blocked}</span>
+      <h2><i class="fa-solid fa-hand"></i> 最近拒绝连接的玩家 </h2>
+      <span style="text-align: right;">总拒绝连接: {$total_blocked}</span>
     </div>
 
     <div class="padding">
@@ -110,20 +110,20 @@
         <table>
           <thead>
             <tr>
-              <th class="text:center">Type</th>
-			        <th class="text:left">Date/Time</th>
-              <th class="text:left">Name</th>
+              <th class="text:center">类型</th>
+			        <th class="text:left">拒绝日期</th>
+              <th class="text:left">玩家名称</th>
             </tr>
           </thead>
           <tbody>
             {foreach from=$players_blocked item="player"}
               <tr class="collapse"
               {if $dashboard_lognopopup}
-                onclick="{$player.link_url}" 
+                onclick="{$player.link_url}"
               {else}
                 onclick="{$player.popup}"
               {/if}
-              onmouseout="this.className='tbl_out'" onmouseover="this.className='tbl_hover'" style="cursor: pointer;" id="{$player.server}" title="Querying Server Data...">
+              onmouseout="this.className='tbl_out'" onmouseover="this.className='tbl_hover'" style="cursor: pointer;" id="{$player.server}" title="查询服务器数据...">
                 <td class="text:center">
                   <i class="fas fa-ban fa-lg"></i>
                 </td>

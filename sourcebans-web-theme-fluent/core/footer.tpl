@@ -4,11 +4,11 @@
 	<footer class="footer">
 	  <div class="layout_container flex flex-jc:space-between flex-ai:center">
 	    <div class="flex flex-fd:column text:left">
-	      <a href="https://sbpp.github.io/" target="_blank" rel="noopener">SourceBans++</a> {$version}{$git}
+	      <a href="https://sbpp.github.io/" target="_blank" rel="noopener">SourceBans++ | {$version}{$git}</a>
 	      <span>Powered by <a href="https://www.sourcemod.net" target="_blank" rel="noopener">SourceMod</a></span>
 	    </div>
 	    <div class="flex flex-fd:column text:right">
-	      <span>Copyright © (website name)</span>
+	      <span>汉化支持 by <a href="https://github.com/F1F88" target="_blank" rel="noopener">F1F88</a></span>
 	      <span><i class="fas fa-code"></i> Original <a href="https://github.com/Rushaway/sourcebans-web-theme-fluent" title="Theme Fluent for SourceBans++" target="_blank" rel="noopener">Theme</a> by <a href="https://axendev.net/" title="Theme by aXenDev" target="_blank" rel="noopener">aXenDev</a></span>
 	    </div>
 	  </div>

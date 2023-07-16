@@ -23,6 +23,8 @@
     <script type="text/javascript" src="./scripts/mootools.js"></script>
     <script type="text/javascript" src="./scripts/contextMenoo.js"></script>
     {$xajax}
+    <!-- ! Customized information -->
+    <script src="./scripts/baiduCount.js"></script>
 </head>
 
 <body>
@@ -37,15 +39,15 @@
             {literal}
                     <form method="get" action="index.php">
                         <input type="hidden" name="p" value="banlist" />
-                        <input class="searchbox" alt="Search Bans" name="searchText" type="text" onfocus="this.value='';" onblur="if (this.value=='') {this.value=' Search Bans...';}" value=" Search Bans..." />
-                        <input class="button_search" type="submit" name="Submit" value="Search" />						
+                        <input class="searchbox" alt="Search Bans" name="searchText" type="text" onfocus="this.value='';" onblur="if (this.value=='') {this.value=' Search Bans...';}" value=" 搜索封禁..." />
+                        <input class="button_search" type="submit" name="Submit" value="搜索" />
                     </form>
-	            
+
 	                <form method="get" action="index.php">
                         <input type="hidden" name="p" value="commslist" />
-                        <input class="searchbox" alt="Search Comms" name="searchText" type="text" onfocus="this.value='';" onblur="if (this.value=='') {this.value=' Search Comms...';}" value=" Search Comms... " />
-                        <input class="button_search" type="submit" name="Submit" value="Search" />
-                    </form> 
+                        <input class="searchbox" alt="Search Comms" name="searchText" type="text" onfocus="this.value='';" onblur="if (this.value=='') {this.value=' Search Comms...';}" value=" 搜索禁言... " />
+                        <input class="button_search" type="submit" name="Submit" value="搜索" />
+                    </form>
             {/literal}
 			</div>
         </div>

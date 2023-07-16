@@ -1,24 +1,22 @@
 <div class="flex flex-jc:center flex-ai:center">
     <div class="layout_box layout_box_medium">
         <div class="layout_box_title">
-            <h2><i class="fas fa-flag-checkered"></i> Submit a Report</h2>
+            <h2><i class="fas fa-flag-checkered"></i> 举报违规玩家</h2>
         </div>
 
         <div class="padding">
             <div>
-                In order to keep our servers running smoothly, offenders of our rules should be punished and we
-                can't always be on call to help.
+                为了维护服务器游戏环境不被恶意玩家破坏，本网站提供了举报违规玩家功能。
             </div>
             <div>
-                When submitting a player report, we ask you to fill out the report as detailed as possible to help
-                ban the offender as this will help us process your report quickly.
+                提交举报信息时，请您尽可能详细地填写报告，以帮助管理员更快更准确的处理违规玩家。
             </div>
 
             <div class="margin-top:half margin-bottom">
-                If you are unsure on how to record evidence within in-game, please click
+                如果您不确定如何在游戏中记录证据，请
                 <a href="javascript:void(0)"
-                    onclick="ShowBox('How To Record Evidence', 'The best way to record evidence on someone breaking the rules would be to use Shadow Play or Plays.TV. Both pieces of software will record your game 24/7 with little to no impact on your game and you simply press a keybind to record the last X amount of minutes of gameplay which is perfect for catching rule breakers.<br /><br /> Alternatively, you can use the old method of using demos. While you are spectating the offending player, press the ` key on your keyboard to show the Developers Console. If this does not show, you will need to go into your Game Settings and enable this. Then type `record [demoname]` and hit enter, the file will then be in your mod folder of your game directory.', 'blue', '', true);">here</a>
-                for an explanation.
+                    onclick="ShowBox('如何记录证据', '在游戏中 你可以按下键盘上的 \' ` \' 键打开游戏控制台 <br /> 输入 \'record name\' 开始录制 &nbsp; || &nbsp; 输入 \'stop\' 停止录制 <br /> 录制保存的 Demo 文件在游戏目录的 mod 文件夹中 <br /> 你可以输入 \'playdemo name\' 或 \'viewdemo name\' 来播放 Demo', 'blue', '', true);">单击此处</a>
+                获取说明。
             </div>
 
             <form action="index.php?p=submit" method="post" enctype="multipart/form-data">
@@ -26,18 +24,18 @@
 
                 <div class="margin-bottom:half">
                     <label for="Type" class="form-label form-label:bottom">
-                        Ban Type
+                        封禁类型
                     </label>
                     <select id="Type" name="Type" class="form-select form-full"
                         onChange="changeType(this[this.selectedIndex].value);">
                         <option value="0">Steam ID</option>
-                        <option value="1">IP Address</option>
+                        <option value="1">IP 地址</option>
                     </select>
                 </div>
 
                 <div class="margin-bottom:half">
                     <label for="SteamID" class="form-label form-label:bottom">
-                        Players Steam ID
+                        玩家 Steam ID
                     </label>
                     <input type="text" id="SteamID" name="SteamID" size="40" maxlength="64" value="{$STEAMID}"
                         class="form-input form-full" />
@@ -45,7 +43,7 @@
 
                 <div class="margin-bottom:half">
                     <label for="BanIP" class="form-label form-label:bottom">
-                        Players IP
+                        玩家 IP 地址
                     </label>
                     <input type="text" id="BanIP" name="BanIP" size="40" maxlength="64" value="{$ban_ip}"
                         class="form-input form-full" />
@@ -53,7 +51,7 @@
 
                 <div class="margin-bottom:half">
                     <label for="PlayerName" class="form-label form-label:bottom">
-                        Players Nickname <span class="mandatory">*</span>
+                        玩家昵称 <span class="mandatory">*</span>
                     </label>
                     <input type="text" id="PlayerName" size="40" maxlength="70" name="PlayerName" value="{$player_name}"
                         class="form-input form-full" />
@@ -61,15 +59,14 @@
 
                 <div class="margin-bottom:half">
                     <label for="BanReason" class="form-label form-label:bottom">
-                        Comments <span class="mandatory">*</span> (Please write down a
-                        descriptive comment. So NO comments like: "hacking")
+                        举报该玩家的原因 <span class="mandatory">*</span> (请尽可能详细描述，摸棱两可的描述无法处理)
                     </label>
                     <textarea id="BanReason" name="BanReason" class="form-text form-full">{$ban_reason}</textarea>
                 </div>
 
                 <div class="margin-bottom:half">
                     <label for="SubmitName" class="form-label form-label:bottom">
-                        Your Name
+                        您的称呼
                     </label>
                     <input type="text" id="SubmitName" size="40" maxlength="70" name="SubmitName"
                         value="{$subplayer_name}" class="form-input form-full" />
@@ -77,7 +74,7 @@
 
                 <div class="margin-bottom:half">
                     <label for="EmailAddr" class="form-label form-label:bottom">
-                        Your Email <span class="mandatory">*</span>
+                        您的邮箱 <span class="mandatory">*</span>
                     </label>
                     <input type="text" id="EmailAddr" size="40" maxlength="70" name="EmailAddr" value="{$player_email}"
                         class="form-input form-full" />
@@ -85,7 +82,7 @@
 
                 <div class="margin-bottom:half">
                     <label for="server" class="form-label form-label:bottom">
-                        Server <span class="mandatory">*</span>
+                        相关服务器 <span class="mandatory">*</span>
                     </label>
                     <select id="server" name="server" class="form-select form-full">
                         <option value="-1">-- Select Server --</option>
@@ -99,12 +96,12 @@
 
                 <div class="margin-bottom:half">
                     <label for="demo_file" class="form-label form-label:bottom">
-                        Upload demo
+                        上传 demo
                     </label>
 
                     <input name="demo_file" id="demo_file" type="file" size="25" class="form-file form-full" />
                     <div class="form-desc">
-                        Note: Only DEM, ZIP, RAR, 7Z, BZ2 or GZ allowed.
+                        注意: 只能上传 DEM, ZIP, RAR, 7Z, BZ2, GZ 格式的文件.
                     </div>
                 </div>
 
@@ -114,11 +111,9 @@
             </form>
 
             <div class="margin-top">
-                <h3>What happens if someone gets banned?</h3>
+                <h3>如果有人被封禁会怎样？</h3>
                 <p>
-                    If someone you reported gets banned, the SteamID or IP will be included onto the ban on the main
-                    bans list and everytime they try to connect to any server they will be blocked from joining and
-                    it will be logged into our database.
+                    如果有人被封禁，特定的 SteamID 或 IP 地址将被记录在在此 SourceBans 数据库中，并且每次该玩家尝试连接到我们的任何一个服务器时，他/她都会被阻止，并会收到一条消息，表明他们已被 SourceBans 封禁。
                 </p>
             </div>
         </div>

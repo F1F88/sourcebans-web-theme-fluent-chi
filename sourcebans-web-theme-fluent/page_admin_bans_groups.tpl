@@ -91,7 +91,7 @@
                                 </tr>
                             </table>
                             &nbsp;&nbsp;L&nbsp;&nbsp;<a href="#" onclick="TickSelectAll();return false;" title="Select All"
-                                name="tickswitchlink" id="tickswitchlink">Select All</a><br /><br />
+                                name="tickswitchlink" id="tickswitchlink">全选</a><br /><br />
                             <table width="90%" style="border-collapse:collapse;" id="group.details" cellpadding="3">
                                 <tr>
                                     <td valign="top" width="35%">
