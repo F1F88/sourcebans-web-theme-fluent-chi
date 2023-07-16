@@ -82,7 +82,7 @@
                                 <div class="collapse_content">
                                     <div class="cMessage cMessage_warning margin" style="font-weight: bold">
                                         <p style="text-align:center">
-                                            <i class="fas fa-info-circle"></i> This {$sub.archive} by 
+                                            <i class="fas fa-info-circle"></i> This {$sub.archive} by
                                                 {if empty($sub.archivedby)}
                                                     <span class="text:italic">Admin deleted</span>
                                                 {else}
@@ -179,7 +179,7 @@
 
                                     <div class="ban_list_comments">
                                         <div class="layout_box_title">
-                                            <h2><i class="fa-regular fa-comments"></i> Comments</h2>
+                                            <h2><i class="fa-regular fa-comments"></i> 评论区</h2>
                                         </div>
 
                                         {if $sub.commentdata != "None"}

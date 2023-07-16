@@ -49,7 +49,7 @@
   <div class="layout_box margin-bottom padding:half flex flex-jc:space-between flex-ai:center m:flex-fd:column">
     <span>
       <a href="index.php?p=commslist&hideinactive={if $hidetext == '隐藏'}true{else}false{/if}{$searchlink|smarty_htmlspecialchars}"
-        title="{$hidetext} inactive">{$hidetext} 已失效的封禁</a> | <i>总禁言: {$total_bans}</i>
+        title="{$hidetext} inactive">{$hidetext} 已失效的封禁</a> | <i>禁言数: {$total_bans}</i>
     </span>
     <div class="pagination">
       <span>{$ban_nav}</span>
@@ -103,7 +103,7 @@
                         {$ban.admin|escape:'html'}
                       </span>
                     {else}
-                      <span class="text:italic">Admin deleted</span>
+                      <span class="text:italic">无</span>
                     {/if}
                   </td>
                 {/if}
@@ -133,7 +133,8 @@
                           <li class="button button-important">{$ban.delete_link}</li>
                         {/if}
 					{else}
-						<li> <a class="button button-success" href='index.php?p=login'>管理员？点此登录</a> </li>
+            <!--  ! Customized information  -->
+						<!-- <li> <a class="button button-success" href='index.php?p=login'>管理员？点此登录</a> </li> -->
 					{/if}
                       </ul>
                       <ul class="ban_list_detal">
@@ -186,7 +187,7 @@
                           <li>
                             <span><i class="fas fa-user-shield"></i> 解封理由</span>
                             {if !isset($ban.ureason) || $ban.ureason == ""}
-                              <span class="text:italic">理由为空</span>
+                              <span class="text:italic">无</span>
                             {else}
                               <span>{$ban.ureason}</span>
                             {/if}
@@ -195,7 +196,7 @@
                             <span><i class="fas fa-user-shield"></i> Unbanned by Admin</span>
 
                             {if empty($ban.removedby)}
-                              <span class="text:italic">Admin deleted</span>
+                              <span class="text:italic">无</span>
                             {else}
                               <span>{$ban.removedby|escape:'html'}</span>
                             {/if}
@@ -223,7 +224,7 @@
                             <span><i class="fas fa-ban"></i> Blocked by Admin</span>
 
                             {if empty($ban.admin)}
-                              <span class="text:italic">Admin deleted</span>
+                              <span class="text:italic">无</span>
                             {else}
                               <span>{$ban.admin|escape:'html'}</span>
                             {/if}
@@ -233,9 +234,9 @@
                                                         <span><i class="fas fa-server"></i> 被封自</span>
                                                             <span {if $ban.server_id != 0} id="host_{$ban.ban_id}"{/if}>
 											{if $ban.server_id == 0}
-											Web Ban
+											网站封禁
 											{else}
-											Please Wait...
+											请稍等...
 											{/if}</span>
                                                     </li>
                         <li>
@@ -264,7 +265,7 @@
                                       {if !empty($commenta.comname)}
                                         <span class="text:bold">{$commenta.comname|escape:'html'}</span>
                                       {else}
-                                        <span class="text:italic">Admin deleted</span>
+                                        <span class="text:italic">无</span>
                                       {/if}
                                       <span>{$commenta.added}</span>
                                       {if $commenta.editcomlink != ""}
@@ -288,7 +289,8 @@
                             </ul>
                           {else}
                             <div class="padding">
-                              {$ban.commentdata}
+                              暂无
+                              <!-- {$ban.commentdata} -->
                             </div>
                           {/if}
                         </div>

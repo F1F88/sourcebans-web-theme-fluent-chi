@@ -13,7 +13,7 @@
                 <!-- ! Customized information -->
                 <br />如果确认您的账号被列入封禁名单，且封禁理由有失公允或理由不当（误封），您可以在这提交申诉来解除封禁。<br />
                     也可以加入我们的
-                    <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=fSii0t8dC_HX8OyNSS2PEJGkU3aRJAr6&authKey=cLaokK6z4c2oBbrM2KN%2F2hBIHzLDMUDRwQNkQ7mCylhZK2xYLXZKVKZOx%2BdrRcOq&noverify=0&group_code=809761730">
+                    <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=fSii0t8dC_HX8OyNSS2PEJGkU3aRJAr6&authKey=cLaokK6z4c2oBbrM2KN%2F2hBIHzLDMUDRwQNkQ7mCylhZK2xYLXZKVKZOx%2BdrRcOq&noverify=0&group_code=809761730" target="_blank">
                         [QQ群聊：809761730] </a>
                     寻求管理员的帮助
             </div>

@@ -107,7 +107,7 @@
                                     {if !empty($ban.admin)}
                                         <td>{$ban.admin|escape:'html'}</td>
                                     {else}
-                                        <td class="text:italic">Admin deleted</td>
+                                        <td class="text:italic">无</td>
                                     {/if}
                                 {/if}
                             <td class="{$ban.class}">{$ban.banlength}</td>
@@ -118,7 +118,12 @@
                                             <div class="padding flex flex-jc:start">
                                                 <ul class="ban_action responsive_show:desktop">
 							<li class="button button-light">{$ban.demo_link}</li>
-													{if $view_bans}
+                                                    {if !$login}
+                                                        <!-- ! Customized information  -->
+                                                        <!-- <li>
+                                                            <a class="button button-success" href='index.php?p=login'>Admin ? Sign In</a>
+                                                        </li> -->
+													{elseif $view_bans}
                                                         {if ($ban.view_edit && !$ban.unbanned)}
                                                             <li class="button button-primary">{$ban.edit_link}</li>
                                                         {/if}
@@ -204,7 +209,7 @@
                                                         <li>
                                                             <span><i class="fas fa-user-shield"></i> 解封理由</span>
                                                             {if $ban.ureason == ""}
-                                                                <span class="text:italic">理由为空</span>
+                                                                <span class="text:italic">无</span>
                                                             {else}
                                                                 <span>{$ban.ureason}</span>
                                                             {/if}
@@ -212,7 +217,7 @@
                                                         <li>
                                                             <span><i class="fas fa-user-shield"></i> Unbanned by Admin</span>
                                                             {if empty($ban.removedby)}
-                                                                <span class="text:italic">Admin deleted</span>
+                                                                <span class="text:italic">无</span>
                                                             {else}
                                                                 <span>{$ban.removedby|escape:'html'}</span>
                                                             {/if}
@@ -248,16 +253,16 @@
                                                         <span><i class="fas fa-server"></i> 被封自 </span>
                                                             <span {if $ban.server_id != 0} id="host_{$ban.ban_id}"{/if}>
                                                                 {if $ban.server_id == 0}
-                                                                Web Ban
+                                                                网站封禁
                                                                 {else}
-                                                                Please Wait...
+                                                                请稍等...
                                                                 {/if}
                                                             </span>
                                                     </li>
                                                     <li>
                                                         <span><i class="fas fa-ban"></i> 拒绝连接 ({$ban.blockcount})</span>
                                                         {if $ban.banlog == ""}
-                                                            <span class="text:italic">从未</span>
+                                                            <span class="text:italic">无</span>
                                                         {else}
                                                             <i>{$ban.banlog}</i>
                                                         {/if}
@@ -266,7 +271,7 @@
                                                 {if $view_comments}
                                                     <ul class="ban_list_comments margin-left responsive_show:desktop">
                                                         <div class="layout_box_title">
-                                                            <h2><i class="fa-solid fa-comments"></i> Comments</h2>
+                                                            <h2><i class="fa-solid fa-comments"></i> 评论区</h2>
                                                         </div>
                                                         {if $ban.commentdata != "None"}
                                                             <ul>
@@ -277,7 +282,7 @@
                                                                                 {if !empty($commenta.comname)}
                                                                                     <span class="text:bold">{$commenta.comname|escape:'html'}</span>
                                                                                 {else}
-                                                                                    <span class="text:italic">Admin deleted</span>
+                                                                                    <span class="text:italic">无</span>
                                                                                 {/if}
                                                                                 <span>{$commenta.added}</span>
                                                                                 {if $commenta.editcomlink != ""}
@@ -289,7 +294,7 @@
                                                                                 {if !empty($commenta.edittime)}
                                                                                     <span class="margin-top:half text:italic">
                                                                                         <i class="fas fa-pencil-alt"></i> Last edit
-                                                                                        {$commenta.edittime} by {if !empty($commenta.editname)}{$commenta.editname}{else}<i>Admin deleted</i>{/if}
+                                                                                        {$commenta.edittime} by {if !empty($commenta.editname)}{$commenta.editname}{else}<i>无</i>{/if}
                                                                                     </span>
                                                                                 {/if}
                                                                             </div>
@@ -299,7 +304,8 @@
                                                             </ul>
                                                         {else}
                                                             <div class="padding">
-                                                                {$ban.commentdata}
+                                                                暂无
+                                                                <!-- {$ban.commentdata} -->
                                                             </div>
                                                         {/if}
                                                     </ul>

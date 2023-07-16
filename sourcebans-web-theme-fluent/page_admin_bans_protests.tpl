@@ -157,7 +157,7 @@
 
                                     <div class="ban_list_comments">
                                         <div class="layout_box_title">
-                                            <h2><i class="fa-regular fa-comments"></i> Comments</h2>
+                                            <h2><i class="fa-regular fa-comments"></i> 评论区</h2>
                                         </div>
 
                                         {if $protest.commentdata != "None"}
