@@ -1,4 +1,5 @@
-需要配合 [sourcebans-pp-chi](https://github.com/F1F88/sourcebans-pp-chi/tree/feature-Chinesization) 使用
+# 需要配合 [sourcebans-pp-chi](https://github.com/F1F88/sourcebans-pp-chi/tree/feature-Chinesization) 使用
+
 ![Header Github](https://raw.githubusercontent.com/Rushaway/sourcebans-web-theme-fluent/master/sourcebans-web-theme-fluent/screenshot.jpg)
 
 # Theme Fluent for SourceBans++ (PHP 8.1 Branch)
