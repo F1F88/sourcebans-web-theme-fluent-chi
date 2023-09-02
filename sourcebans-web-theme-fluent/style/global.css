@@ -309,9 +309,9 @@ span.right {
   padding: 5px;
 }
 
-.table table tbody td:first-child img {
-  width: 18px;
-  height: 18px;
+.table table tbody td img {
+  width: auto;
+  height: auto;
 }
 
 .table_hide > td {
