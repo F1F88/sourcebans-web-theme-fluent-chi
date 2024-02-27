@@ -14,6 +14,7 @@
 
 <!-- Remove the comments balise if you to enable some SocialMedia Icons -->
 
+          <!-- ! Customized information -->
           <li class="responsive_show:desktop">
             <a target="_blank" href="https://github.com/F1F88" rel="noopener" title="开源代码">
               <i class="fa-brands fa-github fa-lg"></i>

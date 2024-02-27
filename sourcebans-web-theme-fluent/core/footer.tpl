@@ -6,10 +6,11 @@
 	    <div class="flex flex-fd:column text:left">
 	      <a href="https://sbpp.github.io/" target="_blank" rel="noopener">SourceBans++ | {$version}{$git}</a>
 	      <span>Powered by <a href="https://www.sourcemod.net" target="_blank" rel="noopener">SourceMod</a></span>
+	      <span><i class="fas fa-code"></i> Original <a href="https://github.com/Rushaway/sourcebans-web-theme-fluent" title="Theme Fluent for SourceBans++" target="_blank" rel="noopener">Theme</a> by <a href="https://axendev.net/" title="Theme by aXenDev" target="_blank" rel="noopener">aXenDev</a></span>
 	    </div>
 	    <div class="flex flex-fd:column text:right">
 	      <span>汉化支持 by <a href="https://github.com/F1F88" target="_blank" rel="noopener">F1F88</a></span>
-	      <span><i class="fas fa-code"></i> Original <a href="https://github.com/Rushaway/sourcebans-web-theme-fluent" title="Theme Fluent for SourceBans++" target="_blank" rel="noopener">Theme</a> by <a href="https://axendev.net/" title="Theme by aXenDev" target="_blank" rel="noopener">aXenDev</a></span>
+	      <a href="https://beian.miit.gov.cn/" target="_blank">琼ICP备2022015436号-2</a>
 	    </div>
 	  </div>
 	</footer>

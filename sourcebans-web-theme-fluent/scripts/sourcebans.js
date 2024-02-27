@@ -232,7 +232,7 @@ function SlideUp(id) {
 }
 
 function RemoveGroup(id, name, type) {
-  var noPerm = confirm("Are you sure you want to delete the group: '" + name + "'?");
+  var noPerm = confirm("确定删除组： '" + name + "'?");
   if (noPerm == false) {
     return;
   }
@@ -240,7 +240,7 @@ function RemoveGroup(id, name, type) {
 }
 
 function RemoveAdmin(id, name) {
-  var noPerm = confirm("Are you sure you want to delete '" + name + "'?");
+  var noPerm = confirm("确定删除管理员： '" + name + "'?");
   if (noPerm == false) {
     return;
   }
@@ -250,14 +250,14 @@ function RemoveAdmin(id, name) {
 function RemoveSubmission(id, name, archiv) {
   if (archiv == '2') {
     var noPerm = confirm(
-      "Are you sure you want to restore the ban submission for '" + name + "' from the archive?"
+      "确定从存档中恢复 '" + name + "' 的申请封禁?"
     );
   } else if (archiv == '1') {
     var noPerm = confirm(
-      "Are you sure you want to move the ban submission for '" + name + "' to the archive?"
+      "确定把 '" + name + "' 的申请封禁移动到存档?"
     );
   } else {
-    var noPerm = confirm("Are you sure you want to delete the ban submission for '" + name + "'?");
+    var noPerm = confirm("确定删除 '" + name + "' 的申请封禁?");
   }
   if (noPerm == false) return;
 
@@ -267,14 +267,14 @@ function RemoveSubmission(id, name, archiv) {
 function RemoveProtest(id, name, archiv) {
   if (archiv == '2') {
     var noPerm = confirm(
-      "Are you sure you want to restore the ban protest for '" + name + "' from the archive?"
+      "确定从存档中恢复 '" + name + "' 的请求解封?"
     );
   } else if (archiv == '1') {
     var noPerm = confirm(
-      "Are you sure you want to move the ban protest for '" + name + "' to the archive?"
+      "确定把 '" + name + "' 的请求解封移动到存档?"
     );
   } else {
-    var noPerm = confirm("Are you sure you want to delete the ban protest for '" + name + "'?");
+    var noPerm = confirm("确定删除 '" + name + "' 的请求解封?");
   }
   if (noPerm == false) {
     return;
@@ -283,7 +283,7 @@ function RemoveProtest(id, name, archiv) {
 }
 
 function RemoveServer(id, name) {
-  var noPerm = confirm("Are you sure you want to delete the server: '" + name + "'?");
+  var noPerm = confirm("确定删除服务端: '" + name + "'?");
   if (noPerm == false) {
     return;
   }
@@ -293,12 +293,8 @@ function RemoveServer(id, name) {
 function RemoveBan(id, key, page, name, confirm, bulk) {
   if (confirm == 0) {
     ShowBox(
-      'Delete Ban',
-      'Are you sure you want to delete the ban' +
-        (bulk == 'true' ? 's' : '') +
-        ' for ' +
-        (bulk == 'true' ? 'those players' : "'" + name + "'") +
-        '?',
+      '删除封禁记录',
+      '确定删除玩家 \'' + name + '\' 的封禁记录?',
       'blue',
       '',
       true
@@ -314,7 +310,7 @@ function RemoveBan(id, key, page, name, confirm, bulk) {
         addslashes(name.replace(/\'/g, "\\'")) +
         "', '1'" +
         (bulk == 'true' ? ", 'true'" : '') +
-        ');" name="rban" class="btn ok" onmouseover="ButtonOver(\'rban\')" onmouseout="ButtonOver(\'rban\')" id="rban" value="Remove Ban" />&nbsp;<input type="button" onclick="closeMsg(\'\');$(\'bulk_action\').options[0].selected=true;" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="Cancel" />'
+        ');" name="rban" class="btn ok" onmouseover="ButtonOver(\'rban\')" onmouseout="ButtonOver(\'rban\')" id="rban" value="删除封禁记录" />&nbsp;<input type="button" onclick="closeMsg(\'\');$(\'bulk_action\').options[0].selected=true;" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="取消" />'
     );
   } else if (confirm == 1) {
     if (page != '') var pagelink = page;
@@ -333,9 +329,8 @@ function RemoveBan(id, key, page, name, confirm, bulk) {
 function UnbanBan(id, key, page, name, popup, bulk) {
   if (popup == 1) {
     ShowBox(
-      '解除封禁理由',
-      '<b>Please give a short comment, why you are going to unban ' +
-        (bulk == 'true' ? 'those players' : "'" + name + "'") +
+      '解封理由',
+      '<b>请说明为什么解除 \'' + name + '\'的封禁' +
         '!</b><br><textarea rows="3" cols="40" name="ureason" id="ureason" style="overflow:auto;"></textarea><br><div id="ureason.msg" class="badentry"></div>',
       'blue',
       '',
@@ -352,14 +347,14 @@ function UnbanBan(id, key, page, name, popup, bulk) {
         addslashes(name.replace(/\'/g, "\\'")) +
         "', '0'" +
         (bulk == 'true' ? ", 'true'" : '') +
-        ');" name="uban" class="btn ok" onmouseover="ButtonOver(\'uban\')" onmouseout="ButtonOver(\'uban\')" id="uban" value="Unban Ban" />&nbsp;<input type="button" onclick="closeMsg(\'\');$(\'bulk_action\').options[0].selected=true;" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="Cancel" />'
+        ');" name="uban" class="btn ok" onmouseover="ButtonOver(\'uban\')" onmouseout="ButtonOver(\'uban\')" id="uban" value="解除封禁" />&nbsp;<input type="button" onclick="closeMsg(\'\');$(\'bulk_action\').options[0].selected=true;" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="取消" />'
     );
   } else if (popup == 0) {
     if (page != '') var pagelink = page;
     else var pagelink = '';
     reason = $('ureason').value;
     if (reason == '') {
-      $('ureason.msg').setHTML('Please leave a comment.');
+      $('ureason.msg').setHTML('请留下评论.');
       $('ureason.msg').setStyle('display', 'block');
       return;
     } else {
@@ -1208,7 +1203,7 @@ function BulkEdit(action, bankey) {
 
 function BanFriendsProcess(fid, name) {
   var checkUp = confirm(
-    "确定封杀 '" + name + "的所有 steam 社区好友吗'?"
+    "Are you sure you want to ban all steam community friends of '" + name + "'?"
   );
   if (checkUp == false) return;
   ShowBox(
@@ -1314,8 +1309,8 @@ function selectLengthTypeReason(length, type, reason) {
 
 function ViewCommunityProfile(sid, name) {
   ShowBox(
-    '查看资料',
-    '正在生成 "' + name + '" 的资料链接...',
+    '查看社区资料',
+    '生成 "' + name + '"的社区资料链接中, 请稍后...',
     'blue',
     '',
     true
@@ -1332,8 +1327,8 @@ function addslashes(str) {
 function RemoveBlock(id, key, page, name, confirm) {
   if (confirm == 0) {
     ShowBox(
-      '删除禁言',
-      '确定解除 ' + name + '的禁言吗?',
+      '删除禁言记录',
+      '确定删除 ' + name + '的禁言记录吗?',
       'blue',
       '',
       true
@@ -1348,7 +1343,7 @@ function RemoveBlock(id, key, page, name, confirm) {
         "', '" +
         addslashes(name.replace(/\'/g, "\\'")) +
         "', '1'" +
-        ');" name="rban" class="btn ok" onmouseover="ButtonOver(\'rban\')" onmouseout="ButtonOver(\'rban\')" id="rban" value="解除禁言" />&nbsp;<input type="button" onclick="closeMsg(\'\');$(\'bulk_action\').options[0].selected=true;" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="取消" />'
+        ');" name="rban" class="btn ok" onmouseover="ButtonOver(\'rban\')" onmouseout="ButtonOver(\'rban\')" id="rban" value="删除禁言记录" />&nbsp;<input type="button" onclick="closeMsg(\'\');$(\'bulk_action\').options[0].selected=true;" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="取消" />'
     );
   } else if (confirm == 1) {
     if (page != '') var pagelink = page;
@@ -1360,11 +1355,8 @@ function RemoveBlock(id, key, page, name, confirm) {
 function UnGag(id, key, page, name, popup) {
   if (popup == 1) {
     ShowBox(
-      'UnGag Reason',
-      '<b>Please give a short comment, why you are going to ungag ' +
-        "'" +
-        name +
-        "'" +
+      '解除禁言原因',
+      '<b>请说明为什么解除 \'' + name + '\' 的禁言' +
         '!</b><br><textarea rows="3" cols="40" name="ureason" id="ureason" style="overflow:auto;"></textarea><br><div id="ureason.msg" class="badentry"></div>',
       'blue',
       '',
@@ -1380,7 +1372,7 @@ function UnGag(id, key, page, name, popup) {
         "', '" +
         addslashes(name.replace(/\'/g, "\\'")) +
         "', '0'" +
-        ');" name="uban" class="btn ok" onmouseover="ButtonOver(\'uban\')" onmouseout="ButtonOver(\'uban\')" id="uban" value="UnGag Player" />&nbsp;<input type="button" onclick="closeMsg(\'\');" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="Cancel" />'
+        ');" name="uban" class="btn ok" onmouseover="ButtonOver(\'uban\')" onmouseout="ButtonOver(\'uban\')" id="uban" value="解除禁言" />&nbsp;<input type="button" onclick="closeMsg(\'\');" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="取消" />'
     );
   } else if (popup == 0) {
     if (page != '') var pagelink = page;
@@ -1409,11 +1401,8 @@ function UnGag(id, key, page, name, popup) {
 function UnMute(id, key, page, name, popup) {
   if (popup == 1) {
     ShowBox(
-      'UnMute Reason',
-      '<b>Please give a short comment, why you are going to unmute ' +
-        "'" +
-        name +
-        "'" +
+      '解除噤声理由',
+      '请说明为什么解除 \'' + name + '\' 的噤声' +
         '!</b><br><textarea rows="3" cols="40" name="ureason" id="ureason" style="overflow:auto;"></textarea><br><div id="ureason.msg" class="badentry"></div>',
       'blue',
       '',
@@ -1429,7 +1418,7 @@ function UnMute(id, key, page, name, popup) {
         "', '" +
         addslashes(name.replace(/\'/g, "\\'")) +
         "', '0'" +
-        ');" name="uban" class="btn ok" onmouseover="ButtonOver(\'uban\')" onmouseout="ButtonOver(\'uban\')" id="uban" value="UnMute Player" />&nbsp;<input type="button" onclick="closeMsg(\'\');" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="Cancel" />'
+        ');" name="uban" class="btn ok" onmouseover="ButtonOver(\'uban\')" onmouseout="ButtonOver(\'uban\')" id="uban" value="解除噤声" />&nbsp;<input type="button" onclick="closeMsg(\'\');" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="取消" />'
     );
   } else if (popup == 0) {
     if (page != '') var pagelink = page;
@@ -1506,8 +1495,8 @@ function search_blocks() {
 
 function ShowBlockBox(check, type, length) {
   ShowBox(
-    'Block Added',
-    'The block has been successfully added<br><iframe id="srvkicker" frameborder="0" width="100%" src="pages/admin.blockit.php?check=' +
+    '添加禁言',
+    '添加禁言成功<br><iframe id="srvkicker" frameborder="0" width="100%" src="pages/admin.blockit.php?check=' +
       check +
       '&type=' +
       type +

@@ -9,7 +9,7 @@
         {
             srvcount += count;
             if(srvcount==-{$total}- || count=='-1') {
-                parent.document.getElementById('dialog-control').innerHTML = "<font color=\"green\" style=\"font-size: 12px;\"><b>Done searching.</b></font>"+parent.document.getElementById('dialog-control').innerHTML;
+                parent.document.getElementById('dialog-control').innerHTML = "<font color=\"green\" style=\"font-size: 12px;\"><b>搜索完毕</b></font>"+parent.document.getElementById('dialog-control').innerHTML;
                 parent.document.getElementById('dialog-control').setStyle('display', '');
                 setTimeout("parent.document.getElementById('dialog-placement').setStyle('display', 'none');",5000);
                 setTimeout("window.location='../index.php?p=admin&c=bans'",5000);
@@ -29,13 +29,13 @@
 	padding: 0px;
    ">
 <div id="container" name="container">
-    <h3 style="font-size: 12px;">Searching for the player on all servers...</h3>
+    <h3 style="font-size: 12px;">正在搜索所有服务器上的玩家...</h3>
     <table border="0">
         -{foreach from=$servers item="serv"}-
         <tr>
             <td><div id="srvip_-{$serv.num}-"><font size="1">-{$serv.ip}-:-{$serv.port}-</font></div></td>
             <td>
-                <div id="srv_-{$serv.num}-"><font size="1">Waiting...</font></div>
+                <div id="srv_-{$serv.num}-"><font size="1">请稍等...</font></div>
             </td>
         </tr>
         -{/foreach}-

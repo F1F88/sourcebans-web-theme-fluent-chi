@@ -30,8 +30,7 @@
         <div class="layout_container responsive_hide:mobile flex flex-jc:space-between flex-ai:center">
 			<div class="flex flex-fd:column text:left">
 				<a href="./index.php?p=home" class="header_logo">
-					<!-- <img src="images/{$logo}" alt="SourceBans Logo" /> -->
-                    <img src="images/logos/nmrih-log-light.png" alt="SourceBans Logo" />
+					<img src="images/{$logo}" alt="SourceBans Logo" />
 				</a>
 			</div>
 			<div class="flex flex-fd:column text:right responsive_show:desktop">
