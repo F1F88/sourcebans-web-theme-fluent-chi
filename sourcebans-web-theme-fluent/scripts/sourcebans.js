@@ -333,7 +333,7 @@ function RemoveBan(id, key, page, name, confirm, bulk) {
 function UnbanBan(id, key, page, name, popup, bulk) {
   if (popup == 1) {
     ShowBox(
-      'Unban Reason',
+      '解除封禁理由',
       '<b>Please give a short comment, why you are going to unban ' +
         (bulk == 'true' ? 'those players' : "'" + name + "'") +
         '!</b><br><textarea rows="3" cols="40" name="ureason" id="ureason" style="overflow:auto;"></textarea><br><div id="ureason.msg" class="badentry"></div>',
@@ -639,7 +639,7 @@ function ProcessEditAdminPermissions() {
 
   if ($('immunity')) {
     if (IsNumeric($('immunity').value)) xajax_EditAdminPerms(aid, Mask, srvMask);
-    else ShowBox('Error', 'Immunity must be a numerical value (0-9)', 'red', '', true);
+    else ShowBox('Error', '权限级别必须是一个数值 (0-9)', 'red', '', true);
   } else xajax_EditAdminPerms(aid, Mask, srvMask);
 }
 
@@ -649,8 +649,8 @@ function ProcessEditGroup(type, name) {
   var group = $('group_id').value;
 
   if (name == '') {
-    ShowBox('Error', 'You have to type a name for the group.', 'red', '', true);
-    $('groupname.msg').innerHTML = 'You have to type a name for the group.';
+    ShowBox('Error', '您必须为组输入一个名称。', 'red', '', true);
+    $('groupname.msg').innerHTML = '您必须为组输入一个名称。';
     $('groupname.msg').setStyle('display', 'block');
     return;
   } else {
@@ -659,7 +659,7 @@ function ProcessEditGroup(type, name) {
   }
 
   if ($('immunity') && !IsNumeric($('immunity').value)) {
-    ShowBox('Error', 'Immunity must be a numerical value (0-9)', 'red', '', true);
+    ShowBox('Error', '权限级别必须是一个数值 (0-9)', 'red', '', true);
     return;
   }
 
@@ -929,7 +929,7 @@ function icon(name) {
 function ProcessMod() {
   var err = 0;
   if (!$('name').value) {
-    $('name.msg').setHTML('You must enter the name of the mod you are adding.');
+    $('name.msg').setHTML('您必须输入要添加的 mod 的名称。');
     $('name.msg').setStyle('display', 'block');
     err++;
   } else {
@@ -938,7 +938,7 @@ function ProcessMod() {
   }
 
   if (!$('folder').value) {
-    $('folder.msg').setHTML("You must enter mod's folder name.");
+    $('folder.msg').setHTML("您必须输入 mod 的文件夹名称。");
     $('folder.msg').setStyle('display', 'block');
     err++;
   } else {
@@ -1010,7 +1010,7 @@ function TabToReload() {
 function CheckEmail(type, id) {
   var err = 0;
   if ($('subject').value == '') {
-    $('subject.msg').setHTML('You must type a subject for the email.');
+    $('subject.msg').setHTML('必须输入邮箱。');
     $('subject.msg').setStyle('display', 'block');
     err++;
   } else {
@@ -1019,7 +1019,7 @@ function CheckEmail(type, id) {
   }
 
   if ($('message').value == '') {
-    $('message.msg').setHTML('You must type a message for the email.');
+    $('message.msg').setHTML('必须输入邮件内容。');
     $('message.msg').setStyle('display', 'block');
     err++;
   } else {
@@ -1058,7 +1058,7 @@ function ButtonOver(el) {
 }
 
 function ClearLogs() {
-  var noPerm = confirm('Are you sure you want to delete all of the log entries?');
+  var noPerm = confirm('确定要删除所有日志条目吗?');
   if (noPerm == false) {
     return;
   }
@@ -1066,7 +1066,7 @@ function ClearLogs() {
 }
 
 function RemoveMod(name, id) {
-  var noPerm = confirm("Are you sure you want to delete '" + name + "'?");
+  var noPerm = confirm("确定要删除 '" + name + "' 吗?");
   if (noPerm == false) return;
   xajax_RemoveMod(id);
 }
@@ -1119,8 +1119,8 @@ function changePage(newPage, type, advSearch, advType) {
 
 function ShowKickBox(check, type) {
   ShowBox(
-    'Ban Added',
-    'The ban has been successfully added<br><iframe id="srvkicker" frameborder="0" width="100%" src="pages/admin.kickit.php?check=' +
+    '添加封禁',
+    '已成功添加封禁<br><iframe id="srvkicker" frameborder="0" width="100%" src="pages/admin.kickit.php?check=' +
       check +
       '&type=' +
       type +
@@ -1208,7 +1208,7 @@ function BulkEdit(action, bankey) {
 
 function BanFriendsProcess(fid, name) {
   var checkUp = confirm(
-    "Are you sure you want to ban all steam community friends of '" + name + "'?"
+    "确定封杀 '" + name + "的所有 steam 社区好友吗'?"
   );
   if (checkUp == false) return;
   ShowBox(
@@ -1227,16 +1227,19 @@ function BanFriendsProcess(fid, name) {
 function OpenMessageBox(sid, name, popup) {
   if (popup == 1) {
     ShowBox(
-      'Send Message',
-      "<b>Please type the message you want to send to <br>'" +
-        name +
-        '\'.</b><br>You need to have basechat.smx enabled as we use<br><i>&lt;sm_psay&gt;</i>.<br><textarea rows="3" cols="40" name="ingamemsg" id="ingamemsg" style="overflow:auto;"></textarea><br><div id="ingamemsg.msg" class="badentry"></div>',
+      // 'Send Message',
+      // "<b>Please type the message you want to send to <br>'" +
+      //   name +
+      //   '\'.</b><br>You need to have basechat.smx enabled as we use<br><i>&lt;sm_psay&gt;</i>.<br><textarea rows="3" cols="40" name="ingamemsg" id="ingamemsg" style="overflow:auto;"></textarea><br><div id="ingamemsg.msg" class="badentry"></div>',
+      '发送私信',
+      "<b>请填写给 '" + name + "' 私信的内容</b><br>" +
+        '<br>功能依赖 basechat.smx <br>（确保服务器可使用指令: <i>&lt;sm_psay&gt;</i>）<br><textarea rows="3" cols="40" name="ingamemsg" id="ingamemsg" style="overflow:auto;"></textarea><br><div id="ingamemsg.msg" class="badentry"></div>',
       'blue',
       '',
       true
     );
     $('dialog-control').setHTML(
-      '<input type="button" name="ingmsg" class="btn ok" onmouseover="ButtonOver(\'ingmsg\')" onmouseout="ButtonOver(\'ingmsg\')" id="ingmsg" value="Send Message" />&nbsp;<input type="button" onclick="closeMsg(\'\');" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="Cancel" />'
+      '<input type="button" name="ingmsg" class="btn ok" onmouseover="ButtonOver(\'ingmsg\')" onmouseout="ButtonOver(\'ingmsg\')" id="ingmsg" value="发送私信" />&nbsp;<input type="button" onclick="closeMsg(\'\');" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="取消" />'
     );
     $('ingmsg').addEvent('click', function () {
       OpenMessageBox(sid, name, 0);
@@ -1260,14 +1263,19 @@ function OpenMessageBox(sid, name, popup) {
 function KickPlayerConfirm(sid, name, conf) {
   if (conf == 0) {
     ShowBox(
-      'Kick Player',
-      "<b>Are you sure you want to kick player  <br>'" + name + "'?</b>",
+      // 'Kick Player',
+      // "<b>Are you sure you want to kick player  <br>'" + name + "'?</b>",
+      // 'blue',
+      // '',
+      // true
+      '踢出玩家',
+      "<b>确定要将 '" + name + "' 踢出服务器吗?</b>",
       'blue',
       '',
       true
     );
     $('dialog-control').setHTML(
-      '<input type="button" name="kbutton" class="btn ok" onmouseover="ButtonOver(\'kbutton\')" onmouseout="ButtonOver(\'kbutton\')" id="kbutton" value="Yes" />&nbsp;<input type="button" onclick="closeMsg(\'\');" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="No" />'
+      '<input type="button" name="kbutton" class="btn ok" onmouseover="ButtonOver(\'kbutton\')" onmouseout="ButtonOver(\'kbutton\')" id="kbutton" value="踢出玩家" />&nbsp;<input type="button" onclick="closeMsg(\'\');" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="取消" />'
     );
     $('kbutton').addEvent('click', function () {
       KickPlayerConfirm(sid, name, 1);
@@ -1306,8 +1314,8 @@ function selectLengthTypeReason(length, type, reason) {
 
 function ViewCommunityProfile(sid, name) {
   ShowBox(
-    'View Community Profile',
-    'Generating Community Profile link for "' + name + '", please wait...',
+    '查看资料',
+    '正在生成 "' + name + '" 的资料链接...',
     'blue',
     '',
     true
@@ -1324,8 +1332,8 @@ function addslashes(str) {
 function RemoveBlock(id, key, page, name, confirm) {
   if (confirm == 0) {
     ShowBox(
-      'Delete Block',
-      'Are you sure you want to delete the block for ' + name + '?',
+      '删除禁言',
+      '确定解除 ' + name + '的禁言吗?',
       'blue',
       '',
       true
@@ -1340,7 +1348,7 @@ function RemoveBlock(id, key, page, name, confirm) {
         "', '" +
         addslashes(name.replace(/\'/g, "\\'")) +
         "', '1'" +
-        ');" name="rban" class="btn ok" onmouseover="ButtonOver(\'rban\')" onmouseout="ButtonOver(\'rban\')" id="rban" value="Remove Block" />&nbsp;<input type="button" onclick="closeMsg(\'\');$(\'bulk_action\').options[0].selected=true;" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="Cancel" />'
+        ');" name="rban" class="btn ok" onmouseover="ButtonOver(\'rban\')" onmouseout="ButtonOver(\'rban\')" id="rban" value="解除禁言" />&nbsp;<input type="button" onclick="closeMsg(\'\');$(\'bulk_action\').options[0].selected=true;" name="astop" class="btn cancel" onmouseover="ButtonOver(\'astop\')" onmouseout="ButtonOver(\'astop\')" id="astop" value="取消" />'
     );
   } else if (confirm == 1) {
     if (page != '') var pagelink = page;

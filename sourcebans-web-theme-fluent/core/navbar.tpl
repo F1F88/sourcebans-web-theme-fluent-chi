@@ -11,9 +11,28 @@
         <li id="jscolor_reset" class="jscolor_li" style="display: none;">
           <button aria-label="Reset color"><i class="fa fa-refresh"></i></button>
         </li>
-        
+
 <!-- Remove the comments balise if you to enable some SocialMedia Icons -->
-        <!-- 
+
+          <li class="responsive_show:desktop">
+            <a target="_blank" href="https://github.com/F1F88" rel="noopener" title="开源代码">
+              <i class="fa-brands fa-github fa-lg"></i>
+          </a>
+          </li>
+
+          <li class="responsive_show:desktop">
+            <a target="_blank" href="https://blog.csdn.net/weixin_43908947/article/details/127372900" rel="noopener" title="开服教程">
+              <i class="fa-solid fa-book fa-lg"></i>
+           </a>
+          </li>
+
+          <li class="responsive_show:desktop">
+            <a target="_blank" href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=DFlkMkOZL6EqByYj6dmzfrf1NjYdvoH9&authKey=2QRZrQi9VSnQ9HuqSCEnlvDPDY5CllpYgXCcj7UQitZN0aMbXdJvRWLXOv%2BlrXc%2B&noverify=0&group_code=809761730" rel="noopener" title="QQ 交流群">
+              <i class="fa-brands fa-qq fa-lg"></i>
+            </a>
+          </li>
+
+        <!--
           <li class="responsive_show:desktop">
             <a target="_blank" href="https://steamcommunity.com/groups/nide_css" rel="noopener" title="Our Steam Group">
               <i class="fab fa-steam-symbol"></i>
@@ -36,7 +55,7 @@
             </a>
           </li>
         -->
-        
+
         <!--
           <li class="responsive_show:desktop">
             <a target="_blank" href="https://www.instagram.com/zuck/" rel="noopener" data-ipstooltip="" _title="Follow us on Instagram">
@@ -89,7 +108,8 @@
           </li>
         {else}
           <li>
-            <a class="button button-success" href='index.php?p=login'>Existing user? Sign In</a>
+            <!-- <a class="button button-success" href='index.php?p=login'>Existing user? Sign In</a> -->
+            <a class="button button-success" href='index.php?p=login'>登录</a>
           </li>
         {/if}
       </ul>
@@ -111,7 +131,8 @@
           <a class="button button-important button:full" href='index.php?p=logout'><i class="fas fa-sign-out-alt"></i>
             Logout</a>
         {else}
-          <a class="button button-success button:full" href='index.php?p=login'>Existing user? Sign In</a>
+          <!-- <a class="button button-success" href='index.php?p=login'>Existing user? Sign In</a> -->
+          <a class="button button-success" href='index.php?p=login'>登录</a>
         {/if}
       </div>
       <nav class="nav_mobile_tab_nav">
@@ -130,7 +151,7 @@
 					        {$admin.title}
 				        </a>
 			        </li>
-                {/foreach}	
+                {/foreach}
             {/if}
         </ul>
       </nav>
@@ -144,7 +165,8 @@
             <ul>
                 {if $login}
                     <li class="margin-right">
-                        <a href='index.php?p=account'><i class="fa-solid fa-gear"></i> Account Settings</a>
+                        <!-- <a href='index.php?p=account'><i class="fa-solid fa-gear"></i> Account Settings</a> -->
+                        <a href='index.php?p=account'><i class="fa-solid fa-gear"></i> 账号信息</a>
                     </li>
                 {/if}
                     {foreach from=$navbar item="nav"}
@@ -161,7 +183,7 @@
                                 {$admin.title}
                             </a>
                         </li>
-                    {/foreach}	
+                    {/foreach}
                 {/if}
             </ul>
         </div>
